@@ -1,0 +1,42 @@
+.todo-card {
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin: 32px;
+    border-radius: 4px;
+    height: 160px;
+    position: relative;
+    text-align: left;
+  }
+  
+  .mybuttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .mybuttons button {
+    padding: 8px;
+    margin: 4px;
+    border: none;
+    background-color: #dc555a;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .textclass{
+    margin: 32px;
+    border: 1px solid grey;
+    width: 352px;
+    padding: 8px;
+  }
+  
+  .mybuttons button:hover {
+    background-color: #dc555a;
+  }
+
+  
+  

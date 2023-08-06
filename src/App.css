@@ -13,6 +13,21 @@
   }
 }
 
+.buttonStyle{
+  width: 128px;
+  height: 40px; 
+  margin: 16px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: palevioletred;
+}
+
+.searchStyle{
+  width: 512px;
+  height: 48px;
+  border: 1px solid grey;
+  color: red
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
