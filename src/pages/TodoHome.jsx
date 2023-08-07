@@ -29,7 +29,7 @@ export default function TodoHome(){
             <p>
             <input type="search" style={{margin: "32px"}} className="searchStyle" value={currentSearchState} onChange={(e)=>{onSearchTermChange(e)}}/>
             </p>
-            <button className="buttonStyle" onClick={()=>{sortByOldest()}}>Oldest Notes</button>
+            <button className="buttonStyle" onClick={()=>{sortByOldest()}}>Recent Notes</button>
             <ChakraProvider>
                 <AddNoteModal/>
             </ChakraProvider>
