@@ -19,9 +19,12 @@ export default function TodoHome(){
      // dispatch({type: ACTION_TYPES.SORT_BY_DATE_TIME})
      setSortVal(true)
     }
-    let organicNotes = currentSearchState ? statenotes : currentCopied
-    if(sortVal===true)
-    organicNotes = [...statenotes].sort((p1, p2)=>(formatDateTime(p2.createdAt)>formatDateTime(p1.createdAt)))
+    
+    let organicNotes = statenotes;
+     if(currentSearchState)
+     organicNotes = state.notes.filter((stateItem)=>stateItem.title.toLowerCase().includes(currentSearchState.toLowerCase()) || stateItem.description.toLowerCase().includes(currentSearchState.toLowerCase()))
+     if(sortVal===true)
+     organicNotes = [...statenotes].sort((p1, p2)=>(formatDateTime(p2.createdAt)>formatDateTime(p1.createdAt)))
     return(
         <div> 
             <p>
