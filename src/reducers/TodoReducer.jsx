@@ -6,7 +6,7 @@ export const initialState = {
     radioState : "", 
     selectState: "", 
     searchState: "", 
-   
+    sort: false
 }
 
 export const ACTION_TYPES = {
@@ -32,10 +32,9 @@ export default function TodoReducer(state, action){
     case ACTION_TYPES.SELECT_PRIORITY: 
     return {...state, selectState: action.payload, notes: state.notes.map((stateItem)=>(stateItem.id===action.payload.id? {...stateItem, priority: action.payload.priority } : stateItem))}
     case ACTION_TYPES.SEARCH_NOTE: 
-    //will check and update code github
     return {...state, searchState: action.payload}
-    // case ACTION_TYPES.SORT_BY_DATE_TIME: 
-    // return {...state, notes: state.notes.sort((n1, n2)=>(formatDateTime(n2.createdAt)>formatDateTime(n1.createdAt)))}
+    case ACTION_TYPES.SORT_BY_DATE_TIME: 
+    return {...state, sort: action.payload}
 
     default: 
     return state

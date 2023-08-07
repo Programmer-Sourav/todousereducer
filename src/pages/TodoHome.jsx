@@ -8,22 +8,21 @@ import { formatDateTime } from "../Utils/DateManipulator"
 
 export default function TodoHome(){
 
-    const { state, dispatch,  statenotes, currentSearchState, currentCopied, selectedFilter} = useContext(TodoContext)
-    const [sortVal, setSortVal] = useState(false)
+    const { state, dispatch,  statenotes, currentSearchState, sortFlag} = useContext(TodoContext)
+    
 
     const onSearchTermChange = (event) =>{
        dispatch({type: ACTION_TYPES.SEARCH_NOTE, payload: event.target.value})
     }
     
     const sortByOldest = () =>{
-     // dispatch({type: ACTION_TYPES.SORT_BY_DATE_TIME})
-     setSortVal(true)
+      dispatch({type: ACTION_TYPES.SORT_BY_DATE_TIME, payload: true})
     }
     
     let organicNotes = statenotes;
      if(currentSearchState)
      organicNotes = state.notes.filter((stateItem)=>stateItem.title.toLowerCase().includes(currentSearchState.toLowerCase()) || stateItem.description.toLowerCase().includes(currentSearchState.toLowerCase()))
-     if(sortVal===true)
+     if(sortFlag)
      organicNotes = [...statenotes].sort((p1, p2)=>(formatDateTime(p2.createdAt)>formatDateTime(p1.createdAt)))
     return(
         <div> 

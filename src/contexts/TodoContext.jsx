@@ -14,6 +14,7 @@ export function TodoProvider({children}){
         <TodoContext.Provider  value={{state, dispatch, statenotes: state.notes, 
             currentRadioState: state.radioState, currentSelectState: state.selectState, 
             currentSearchState: state.searchState, currentCopied: state.copiedNotes, 
-        selectedFilter: state.selectCheckboxstate}}>{children}</TodoContext.Provider>
+        selectedFilter: state.selectCheckboxstate, 
+      sortFlag: state.sort}}>{children}</TodoContext.Provider>
     )
 }
